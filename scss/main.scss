@@ -1,83 +1,50 @@
 @import "libs";
 @import "reset";
+@import "fonts";
 @import "vars";
 @import "mixins";
 body {
     background: $body-bg;
     overflow: auto;
+    font: 1em $default-font;
 }
 .header {
     width: 100%;
-    height:100px;
+    padding: 50px 150px;
     position: absolute;
-    top: 0;
-    z-index: 1;
-    background-color: rgba(57,75,95,0.7);
-    border-bottom: 3px solid $dark-blue;
+    top: 0px;
+    z-index:1;
 }
-#logo {
-    margin: 25px 30px;
-    float:left;
+.header_wrap {
+    width: 100%;
+    height: 100%;
+    text-align: center;
     a {
+        font: bold 1em OpenSans;
         color: $w;
         text-decoration: none;
-    }
-}
-.header_menu_items {
-    list-style:none;
-    li {
-        padding: 25px 0;
-        margin-right: 10px;
-        height:100px;
-        float:left;
-        &>a {
-            display: block;
-            color: $w;
-            text-decoration: none;
-            font-size: 18px;
-            height: 50px;
-            padding: 10px;
-            border-radius: 15px;
-            transition: 0.15s ease-in-out;
-            &:hover {
-                background-color: rgba(0,183,244,0.5);
-            }
+        margin-right: 50px;
+        transition: 0.25s ease-in-out;
+        &:hover {
+            border-bottom:3px solid $light-blue-text;
         }
         &:last-child {
-            float:right;
-            margin-right: 30px;
+            margin-right: 0px;
         }
     }
 }
-.search_field {
-    width: 200px;
-    height: 50px;
-    padding: 10px 0;
-    position: relative;
-}
-.search_field_inside {
-    height: 100%;
-    background-color: $w;
-    border-radius:5px;
-}
-#search_field_input {
-    width: 170px;
-    height: 30px;
-    border:none;
-    border-radius:5px;
-}
-#search_button {
-    position: absolute;
-    right: 10px;
-    top: 11px;
+.link_logo:hover{
+    border-bottom: none !important;
 }
 /* ===== Слайдер ===== */
 #carousel {
     height: 100vh;
+    min-height: 550px;
     position: relative;
 }
 .gallery {
     height: 100vh;
+    min-height: 550px;
     overflow: hidden;
     .wrap {
         width: 500vw;
@@ -87,8 +54,9 @@ body {
             float: left;
             width: 100vw;
             position: absolute;
-            top:0;
-            user-select:none
+            top: 0;
+            user-select: none;
+            -ms-user-select: none;
         }
         .slide_1 {left:0vw;}
         .slide_2 {left:100vw;}
@@ -103,19 +71,18 @@ body {
     transform: translate(-50%,0);
     bottom: 50px;
     .gallery_navigator_item {
-        width: 30px;
-        height: 30px;
-        padding: 0;       
+        width: 25px;
+        height: 25px;
+        //padding: 10px;       
+        float:left;
         border: 5px solid $w;
         border-radius: 50%;  
         margin-right: 20px;
         cursor: pointer;
+        box-sizing: content-box;
         transition: 0.25s ease-in-out;
         &:hover {
-            border: 5px solid rgba(0,183,244,0.5);     
-        }
-        &:last-child {
-            margin-right: 0;
+            border: 5px solid rgba(120,214,210,0.9);     
         }
     }
     .navigator_item-active{
@@ -127,51 +94,37 @@ body {
     height: auto;
 }
 .name-catalog {    
-    height: 130px;
+    height: 135px;
+    padding: 45px 0 45px 0;
+    text-align: center;
 }
 .name-catalog_program {
-    background-color: $body-bg;
+    
 }
-
 .name-catalog_program_text {
-    padding: 46px 0 46px 0;
-    text-align: center;
     margin: 0;
+    background-color: $body-bg;
 }
 
 .main-programs_container_programs {
     display: block;
     height:390px; // Увеличивать размер
-}
-.main-porgrams_wrap {
     overflow: hidden;
 }
 .main-programs_container_programs_image {
     display: block;
-    width:50%;
-
-    //max-width: 100%;
-    //max-height: 100%;
-
+    max-width: 100%;
     width: 50%;
-    height: 100%;
-
-    /*min-height: 24.4em;
-    max-height: 40em;*/
-    //height: 40vh;
-    //width: 50%;
+    height: 100%; // Для паралакса 200%
     cursor: default;
     position: relative;
     float: left; 
 }
-
 .main-programs_container_programs_content {
     background-color: $light-grey;
     width: 50%;
     display: block;
     float: left;
-    /*min-height: 24.4em;
-    max-height: 40em;*/
     height: 100%;
     padding: 45px 100px 45px 100px;
     position: relative;
@@ -207,25 +160,19 @@ body {
 }
 
 .main-programs_button {
-    //display: inline-block;
-    //width: 248px;
-    //height: 50px;
-    //border: 5px solid #fff
     text-align: center;
-    //height: 66px;
     position: absolute;
     bottom: 20px;
     left: 50%;
     transform: translate(-50%,0);
 }
 
-.main-progrms_button_text {
+.main-programs_button_text {
+    font: bold 1em OpenSans;
     text-decoration: none;
     color: $w;
     padding: 15px 45px;
     border: 5px solid $w;
-    //font-family: 
-    font-size: 16px;
     text-align: center;
     outline: 0;
     display: inline-block;
@@ -239,12 +186,11 @@ body {
 // Блок материалы
 .material-block {
     height: 560px;
-    background-color: $dark-blue;
+    background-color: $dark-cyan;
 }
 .name-catalog_material {
+    font: 800 2.5em OpenSans;
     color: $w;
-    text-align: center;
-    padding: 46px 0 46px 0;
 }
 .material-block_elements {
     height: 300px;
@@ -258,18 +204,17 @@ body {
     border-radius: 15px;
     float:left;
     padding: 50px;
-
-
+    transition: 0.15s ease-in-out;
 }
 .material-block_elem_inside {
     height: 100%;
     position: relative;  
+    font: bold 2em OpenSans;
 }
 .material-block_books {
 
 }
 .material-block_video {
-
     margin-left: 100px;
     margin-right: 100px;
 }
@@ -277,7 +222,10 @@ body {
 
 }
 .material-block_image {
-        margin: 0 auto;
+    display:block;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
 
     img {
         height:100px;
@@ -297,5 +245,141 @@ body {
         transition: 0.25s ease-in-out;
     }
 }
-
+.material-block_header-active {
+    color: $purple !important;
+}
+.material-block_books-active {
+    border: 10px solid $purple !important;
+}
+// Написать нам
+.write-to-us {
+    background-color: $purple;
+    min-height: 560px;
+}
+.write-to-us_name-catalog {
+    font: 800 2.5em OpenSans;
+    color: $w;
+}
+.write-to-us_form_block{
+    padding-bottom:130px;    
+}
+.write-to-us_form {
+    width: 500px;
+    height: auto;
+    margin: 0 auto;
+}
+.write-to-us_inp {
+    height: 50px;
+    display:block; 
+    color: #3c3c3c;
+    font: bold 1em OpenSans;
+}
+.write-to-us_textMessage {
+    height: 100px;
+    min-height: 50px;
+}
+.write-to-us_inp, .write-to-us_textMessage {
+    width: 100%;
+    border: none;
+    outline: none;
+    -moz-appearance: none;
+    border-radius: 5px;
+    padding: 10px 20px; 
+    margin-bottom: 25px;
+}
+.write-to-us_Send {
+    color: $w;
+    font: bold 1em sans-serif;
+    border: 5px solid #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    transition: 0.25s ease-in-out;
+    display: block;
+    width: 150px;
+    text-align: center;
+    margin: 0 auto;
+    &:hover{
+        color: $light-blue;
+        border: 5px solid $light-blue;
+        text-decoration:none;
+    }
+}
+//footer
+.footer_wrap {
+    height: 250px;
+    padding: 50px 150px;
+}
+.footer_social {
+    float: left;
+    height: 100%;
+}
+.footer_social_we {
+    font: bold 1.75em OpenSans;
+    color: $dark-grey;
+    text-align: center;
+    margin: 0px auto 20px auto;
+}
+.footer_social_buttons {
+    list-style: none;
+    height: 75px;
+    li {
+        float:left;
+        width: 75px;
+        height: 75px;
+        margin-right: 50px;
+        &:last-child {
+            margin-right: auto;
+        }
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            transition: 0.15s ease-in-out;
+            img {
+                max-width:100%;
+                max-height:100%;
+            }  
+        }
+    }
+}
+.social-default{
+    border: 10px solid $dark-grey;
+}
+.social_vk-active {
+    background-color: #5181B8;
+    border: 10px solid #5181B8;
+}
+.social_facebook-active {
+    background-color: #4267B2;
+    border: 10px solid #4267B2; 
+}
+.social_twitter-active {
+    background-color: #1EA1F2;
+    border: 10px solid #1EA1F2;  
+}
+.footer_contacts {
+    width: 500px;
+    float: right;
+    height: 100%;
+}
+.contacts_name, .contacts_content {
+    height: 100%;
+    list-style: none;
+    float: left;
+    color: $dark-grey;
+}
+.contacts_name {
+    margin-right: 70px;
+    li {
+        font: bold 1.5em OpenSans;
+        line-height: 50px;
+    }
+}
+.contacts_content {
+    li {
+        font: bold 1.25em OpenSans;
+        line-height: 50px;
+    }
+}
 @import "media"; 
