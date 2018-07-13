@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    var oldTime;
     // При прокрутке создается паралакс эффект у элемента с классом gallery
     var onScroll = function() {
         var scrollTop = $(this).scrollTop();
@@ -10,7 +11,7 @@ $(document).ready(function() {
     onScroll.apply(window);
     $(window).on('scroll', onScroll);
     // Слайдер 
-    var slideNow = 0; // Текущий слайд
+   /* var slideNow = 0; // Текущий слайд
     // Функция которая смещает тег с классом wrap на 100% экрана
     function swipe(nav_item) { 
         $('.wrap').animate({
@@ -19,7 +20,6 @@ $(document).ready(function() {
         var navig = '.navigator_item_slide_'+(nav_item+1);
         $('.navigator_item-active').removeClass('navigator_item-active');
         $(navig).addClass('navigator_item-active');
-        
     }
     var sliderInterval = setTimeout(slInterval,10000);
     function slInterval(){// Функция для автоматического смещения слайда каждые 10 секунд
@@ -40,9 +40,57 @@ $(document).ready(function() {
             }
         });
     }
-    slider('.gallery_navigator_item');
+    slider('.gallery_navigator_item');*/
 
-    $('.material-block_image').each(function(index,elem) {
+    var currentSlide = 0; // Текущий слайд
+    var SlideTime = 10000; // Время переключения между слайдами
+    var is_animate = false; // Воспроизводится анимация?
+    var sliderWrap = $('.wrap');
+    var slideWidth = $('.wrap img').outerWidth();
+    var scrollSlider = sliderWrap.position().left - slideWidth;
+    var Timer;
+    var Timer2;
+    autoSlider();
+    function autoSlider() {
+        Timer = setTimeout(function(){
+            if(!is_animate) {
+                is_animate = true;
+                currentSlide++;
+                if ( currentSlide == sliderWrap.children().length) {
+                    currentSlide = 0;
+                }
+                sliderWrap.animate({right:currentSlide*100+"vw"},1000,function(){
+                    is_animate = false;
+                });
+                var navItmElem_act = $('.navigator_item-active');
+                if (navItmElem_act.index() == $('.gallery_navigator_item').length-1) {
+                    navItmElem_act.removeClass('navigator_item-active');
+                    $('.gallery_navigator_item:first').addClass('navigator_item-active');
+                }
+                else {
+                    navItmElem_act.removeClass('navigator_item-active').next().addClass('navigator_item-active');
+                }
+                autoSlider();
+            }
+        },SlideTime);
+    }
+
+    $('.gallery_navigator_item').on('click', function(){
+        var nav_item = $(this).index();
+        console.log(nav_item!=currentSlide);
+        if ( nav_item != currentSlide) {
+            sliderWrap.animate({right:nav_item*100+"vw"},1000);
+            currentSlide=nav_item;
+            $('.navigator_item-active').removeClass('navigator_item-active');
+            var temp = '.navigator_item_slide_'+(currentSlide+1);
+            $(temp).addClass('navigator_item-active');
+        }
+        clearTimeout(Timer);
+        clearTimeout(Timer2);
+        Timer2 = setTimeout(autoSlider,SlideTime);
+    });
+
+    $('.material-block_image').each(function(index,elem) { // Изменение цвета иконок материал
         var element = $(elem);
         
         element.mouseover(function(){
@@ -63,10 +111,7 @@ $(document).ready(function() {
 
     function changePlaceholder(elem,message) { //Элемент с placeholder и сообщение
         var placeholder = $(elem);
-        $(elem).css({
-            'color':'#3c3c3c',
-            'font':'bold 1em OpenSans'
-        });
+        $(elem).addClass('write-to-us_input_text');
         placeholder.focus(function(){
             placeholder.attr('placeholder','');
         });
@@ -98,7 +143,51 @@ $(document).ready(function() {
             el.removeClass(new_class); 
         });
     }
-    changeSocialIcon('#social_vk','img/Footer/social_vk_grey.png','img/Footer/social_vk_white.png','social_vk-active');
-    changeSocialIcon('#social_facebook','img/Footer/social_facebook_grey.png','img/Footer/social_facebook_white.png','social_facebook-active');
-    changeSocialIcon('#social_twitter','img/Footer/social_twitter_grey.png','img/Footer/social_twitter_white.png','social_twitter-active');
+    changeSocialIcon('#social_vk','img/Footer/social_vk_white.png','img/Footer/social_vk_white.png','social_vk-active');
+    changeSocialIcon('#social_facebook','img/Footer/social_facebook_white.png','img/Footer/social_facebook_white.png','social_facebook-active');
+    changeSocialIcon('#social_twitter','img/Footer/social_twitter_white.png','img/Footer/social_twitter_white.png','social_twitter-active');
+
+
+    /*===============Контакты===============*/
+    var out = $("modal-overlay");
+    $('#header_writetous').click(function(e){
+        $('body').css('overflow', 'hidden');
+        $('#modal-overlay').css({display:"block"});
+        $('.modal-contentPurple').css({display:"block"});
+        $('#modal-overlay').animate({
+            opacity:'0.8'
+        },500,function(){
+            $('#modal-block').css({display:"block"});
+            $('#modal-block').animate({
+                top:"50%"/*,
+                left:"50%",
+                transform: "translate(-50%,-50%)"*/
+            },500,function(){});
+        });
+        return false;
+    });
+    function removeContactBlock() { /* Функция для удаления блока контакты*/
+        $('body').css("overflow", "auto");
+        $('#modal-overlay').animate({
+            opacity:"0"
+        },500,function(){
+            $('#modal-overlay').css({
+                display:"none"
+            });
+            $('#modal-block').animate({
+                top:"150%",
+                display:"none"
+            },500,function(){
+                $('.modal-contentPurple').css({display:"none"});
+            });        
+        })
+        
+    }
+    $('#modal-overlay').click(function(){
+        removeContactBlock();
+    }); /* При нажатии вне окна закрывает блок контакты*/
+    $('#modal-close').click(function(){
+        removeContactBlock();
+    }); /* В окне кнопка 'X' которая закрывает контакты*/
+
 });

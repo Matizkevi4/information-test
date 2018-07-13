@@ -1,18 +1,23 @@
 $default-font: "OpenSans", sans-serif;
-$light-grey: #bebebe;
+$fs_36: 2.25em; // 36 / 16
+$fs_30: 1.875em; // 30 / 16
+$fs_26: 1.625em; // 26 / 16
+$fs_20: 1.25em; // 20 / 16
+$fs_16: 1em; // 16 / 16
+$light-grey: #e6e6e6;
 $dark-grey: #3c3c3c;
 $light-blue_text: #78d6d2;
 $light-blue: #3bf5e6;
-$dark-blue: #394b5f;
+//$dark-blue: #394b5f;
 $dark-cyan: #45b2ad;
 $w: #fff;
 $purple: #4d3f53;
-$body-bg: #e9e6dd;
-
+$body-bg: #e6e6e6;
+/*
 // Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
 $grid-gutter-width: 30px;
 $grid-columns: 12;
 $grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
 $container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px);
 
-$gutter: $grid-gutter-width;
+$gutter: $grid-gutter-width;*/

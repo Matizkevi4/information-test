@@ -3,23 +3,65 @@
 <head>
     <title>Information</title>
     <meta charset="utf-8">
-    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
-    <link rel="stylesheet" href="libs/bootstrap/bootstrap.css">
+    <!-- <link rel="shortcut icon" href="img/favicon.png" type="image/png"> -->
+    <!-- <link rel="stylesheet" href="libs/bootstrap/bootstrap.css"> -->
     <link rel="stylesheet" type="text/css" href="css/main.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Говорим что используем новейшие браузеры начинает от IE=edge -->
-    <meta property="og:image" content="path/to/image.jpg"> <!-- При копировании ссылки на сайт загружается изображение -->
+    <!-- <meta property="og:image" content="path/to/image.jpg"> --> <!-- При копировании ссылки на сайт загружается изображение -->
     <meta name="description" content=""> <!-- Ключевые строки (для seo поиска) -->
     <meta name="keywords" content=""> <!-- Ключевые слова (для seo поиска) -->
 </head>
 <body>
+    <!-- Контакты сделать отдельную страницу-->
+   <!--  <div class="modal-overlay" id="modal-overlay"></div> 
+     <div class="modal-block" id="modal-block">
+        <span id="modal-close" class="modal-closePurple">x</span>
+        <div class="modal-content">
+            <div class="contact_modal-content_mainContacts">
+                <h1 class="contact_modal-content_mainContacts-caption">Контакты</h1>
+                <div class="contact_modal-content_mainContacts_wrap">
+                    <div class="contact_modal-content_mainContacts_wrap_text">
+                        <p class="contact_modal-text contact_modal-title_FIO">ФИО: <span id="contact_modal-text_FIO">Мартынова Нинель Наиловна</span></p> 
+                        <p class="contact_modal-text contact_modal-title_Address">Адрес: <span id="contact_modal-text_Address">ул. Челюскинцев 159, ауд. 101</span></p> 
+                        <p class="contact_modal-text contact_modal-title_Phone">Телефон: <span id="contact_modal-text_Phone">8(800)555-35-35</span></p> 
+                        <p class="contact_modal-text contact_modal-title_Email">Email: <span id="contact_modal-text_Email">randomemail123@gmail.com</span></p> 
+                    </div>
+                    <div class="contact_modal-content_mainContacts_wrap-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2669.3239215874255!2d37.8069312150053!3d48.00745146819501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e090444e09f93d%3A0x66bdafb1f4b121ec!2z0JTQvtC90LXRhtC60LjQuSDQn9C-0LvQuNGC0LXRhdC90LjRh9C10YHQutC40Lkg0JrQvtC70LvQtdC00LY!5e0!3m2!1sru!2sua!4v1530815124580" width="365" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="contact_modal-content_mainContacts_wrap-social">
+                    <ul class="contact_social_buttons">
+                        <li class="contact_social_button"><a href="#" id="social_vk" class="social-default contact_social-default"><img src="img/Footer/social_vk_grey.png" alt="vk"></a></li>
+                        <li class="contact_social_button"><a href="#" id="social_facebook" class="social-default contact_social-default"><img src="img/Footer/social_facebook_grey.png" alt="facebook"></a></li>
+                        <li class="contact_social_button"><a href="#" id="social_twitter" class="social-default contact_social-default"><img src="img/Footer/social_twitter_grey.png" alt="twitter"></a></li>
+                     </ul>   
+                </div>
+            </div>
+            <div class="contact_modal-content_secondContacts">
+                <h1 class="contact_modal-content_secondContacts-caption">Дизайн и разработка</h1>
+                <div class="contact_modal-content_secondContacts-fContact">
+                    <p class="contact_modal-content_secondContacts-">VK: <a href="https://vk.com/write100443666">vk.com/dimaduvanov</a></p>
+                    <p class="contact_modal-content_secondContacts-">Email: duvanov_dima@bk.ru</p>
+                </div>
+                <div class="contact_modal-content_secondContacts-sContact">
+                    <p class="contact_modal-content_secondContacts-">VK: <a href="https://vk.com/write275060567">vk.com/matizkevi4</a></p>
+                    <p class="contact_modal-content_secondContacts-">Email: mrmatizfeed@gmail.com</p>
+                </div>
+            </div>
+        </div>  
+    </div>  -->
+
+
+
     <div class="header">
         <div class="container header_wrap">
             <a href="#">Уроки</a>
             <a href="#">Программное обеспечение</a>
             <a href="#" class="link_logo"><img src="img/logo.png" alt="LOGO" class="header_logo"></a>
-            <a href="#">Контакты</a>
-            <a href="#">Написать нам</a>
+            <a href="#" id="header_contacts">Контакты</a>
+            <a href="#" id="header_writetous">Написать нам</a>
         </div>
     </div>
     <div id="carousel">
@@ -41,10 +83,7 @@
         </div>
     </div>
 <!---->
-    
-    <div class="name-catalog name-catalog_program">
-        <h2 class="name-catalog_program_text">Программное обеспечение</h2>
-    </div>
+    <h2 class="name-catalog_program_text">Программное обеспечение</h2>
     <div class="main-programs">
         <div class="main-programs-one_wrapper">
             <div class="main-programs-one_wrapper_content">
@@ -52,18 +91,18 @@
                     <!--<div class="main-programs_container_programs_image" style="background-image: url(img/Programs/photo-programs-1.jpg);">  
                     </div>-->
                     <div class="main-programs_container_programs_fix-image">
-                       <span><a href="#" class="fab"><img class="main-programs_container_programs_image" src="img/Programs/photo-programs-1.jpg" alt="Фото программы 1"></a></span>
+                       <a href="#" class="fab"><img class="main-programs_container_programs_image" src="img/Programs/photo-programs-1.jpg" alt="Фото программы 1"></a>
                     </div> 
-                    <div class="main-programs_container_programs_content">
+                    <div class="main-programs_container_programs_content container_programs_content_right">
                         <div class="main-porgrams_wrap">
                             <div class="main-programs_header">
                                 <h3 class="main-programs_header_text">Программы Office</h3>   
                             </div>
                             <div class="main-programs_description">
-                                <p class="main-programs_description_text">Предназначен Office для создания в краткие сроки документов различной сложности. Также создание электронных таблиц любой сложности. Для создания качественных и красивых презентаций. Для управления базами данных, сбора данных и управления ими. Для подготовки публикаций. Также для работы с бизнес-диаграммами и техническими диаграммами. Управление проэктами. Для создания заметок и управления ими.</p>
+                                <p class="main-programs_description_text">Предназначены программы Office для создания документов различной сложности. Также создание электронных таблиц любой сложности. Для создания качественных и красивых презентаций. Для управления базами данных, сбора данных и управления ими. Для подготовки публикаций. Также для работы с бизнес-диаграммами и техническими диаграммами. Управление проэктами. Для создания заметок и управления ими.</p>
                             </div>
                             <div class="main-programs_button">
-                                <a href="" class="main-progrms_button_text">Подробнее</a>
+                                <a href="" class="main-programs_button_text">Подробнее</a>
                             </div>
                         </div>
                     </div>
@@ -75,21 +114,21 @@
                 <div class="main-programs_container_programs">
                     <!--<div class="main-programs_container_programs_image" style="background-image: url(img/Programs/photo-programs-1.jpg);">  
                     </div>-->
-                    <div class="main-programs_container_programs_content">
+                    <div class="main-programs_container_programs_content container_programs_content_left">
                         <div class="main-porgrams_wrap">
                             <div class="main-programs_header">
                                 <h3 class="main-programs_header_text">Программы для 3D моделирования</h3>
                             </div>
                             <div class="main-programs_description">
-                                <p class="main-programs_description_text">Предназначены программы для 3D модельеров — они создают 3D модели персонажей, зданий, техники животных для игр, и реже в киноиндустрии. Для визуализация интерьеров помещений, экстерьеров, выставочных стендов. Для создания наружной рекламы, печатной продукции, а так же дизайна сайтов. А также при использовании в пост-обработке, создания различных спецэффектов в фильмах и их монтаж, совмещение 3d и видеоряда, и анимации персонажей в видеоиграх.</p>
+                                <p class="main-programs_description_text">Предназначены программы для 3D модельеров — они создают 3D модели персонажей, зданий, техники, животных. Для визуализация интерьеров помещений, экстерьеров, выставочных стендов. Для создания наружной рекламы, печатной продукции, а так же дизайна сайтов. А также при использовании в пост-обработке, создания различных спецэффектов в фильмах и их монтаж, создание анимации персонажей в видеоиграх.</p>
                             </div>
                             <div class="main-programs_button">
-                                <a href="" class="main-progrms_button_text">Подробнее</a>
+                                <a href="" class="main-programs_button_text">Подробнее</a>
                             </div>
                         </div>
                     </div>
                     <div class="main-programs_container_programs_fix-image">
-                       <span><a href="#" class="fab"><img class="main-programs_container_programs_image" src="img/Programs/photo-programs-2.jpg" alt="Фото программы 2"></a></span>
+                       <a href="#" class="fab"><img class="main-programs_container_programs_image" src="img/Programs/photo-programs-2.jpg" alt="Фото программы 2"></a>
                     </div> 
                 </div>
             </div> 
@@ -100,9 +139,9 @@
                     <!--<div class="main-programs_container_programs_image" style="background-image: url(img/Programs/photo-programs-1.jpg);">  
                     </div>-->
                     <div class="main-programs_container_programs_fix-image">
-                       <span><a href="#" class="fab"><img class="main-programs_container_programs_image" src="img/Programs/photo-programs-3.jpg" alt="Фото программы 3"></a></span>
+                       <a href="#" class="fab"><img class="main-programs_container_programs_image" src="img/Programs/photo-programs-3.jpg" alt="Фото программы 3"></a>
                     </div> 
-                    <div class="main-programs_container_programs_content">
+                    <div class="main-programs_container_programs_content container_programs_content_right">
                         <div class="main-porgrams_wrap">
                             <div class="main-programs_header">
                                 <h3 class="main-programs_header_text">Программы для обработки изображений</h3>
@@ -111,7 +150,7 @@
                                 <p class="main-programs_description_text">Предназначены программы для того, чтобы улучшить качество картинки, настроить параметры цвета или применить к снимку фильтр. Для обрезания, отражения, выравнивания и изменения размера кадра, для удаления объектов и замены фона. Также с этими программами можно делать фотомонтаж, коллажи, макеты, ретушь портретов, рисовать, составлять инфографики и комиксы, делать анимацию, конвертировать форматы, оптимизировать изображения.</p>
                             </div>
                             <div class="main-programs_button">
-                                <a href="" class="main-progrms_button_text">Подробнее</a>
+                                <a href="" class="main-programs_button_text">Подробнее</a>
                             </div>
                         </div>
                     </div>
@@ -124,7 +163,7 @@
                 <div class="main-programs_container_programs">
                     <!--<div class="main-programs_container_programs_image" style="background-image: url(img/Programs/photo-programs-1.jpg);">  
                     </div>-->
-                    <div class="main-programs_container_programs_content">
+                    <div class="main-programs_container_programs_content container_programs_content_left">
                         <div class="main-porgrams_wrap">
                             <div class="main-programs_header">
                                 <h3 class="main-programs_header_text">Программы для редактирования видео и аудио</h3>
@@ -133,12 +172,12 @@
                                 <p class="main-programs_description_text">Предназначены программы для видео для того, чтобы осуществлять монтаж видео и звуковых файлов. Кроме того, большинство видеоредакторов позволяют создавать и накладывать титры, осуществлять цветовую и тональную коррекцию изображения, микшировать звук и создавать спецэффекты.<span class="main-programs_description_text_transfer">Программы для аудио предназначены для удаления шума, запись с одновременным прослушиванием имеющихся дорожек, запись с микрофона.</span></p>
                             </div>
                             <div class="main-programs_button">
-                                <a href="" class="main-progrms_button_text">Подробнее</a>
+                                <a href="" class="main-programs_button_text">Подробнее</a>
                             </div>
                         </div>
                     </div>
                     <div class="main-programs_container_programs_fix-image">
-                       <span><a href="#" class="fab"><img class="main-programs_container_programs_image" src="img/Programs/photo-programs-4.jpg" alt="Фото программы 4"></a></span>
+                       <a href="#" class="fab"><img class="main-programs_container_programs_image" src="img/Programs/photo-programs-4.jpg" alt="Фото программы 4"></a>
                     </div> 
                 </div>
             </div> 
@@ -147,7 +186,7 @@
 
     <div class="material-block">
         <div class="material-block_inside">
-            <h2 class="name-catalog name-catalog_material">Материал</h2>
+            <h2 class="name-catalog name-catalog_material">Материалы</h2>
             <div class="material-block_elements">
                 <div class="material-block_elem material-block_books">
                     <div class="material-block_elem_inside">
@@ -176,7 +215,7 @@
             </div>
         </div>
     </div>
-    <div class="write-to-us">
+<!--     <div class="write-to-us">
         <h2 class="name-catalog write-to-us_name-catalog">Написать нам</h2>
         <div class="write-to-us_form_block">
             <form action="index.html" method="post" class="write-to-us_form" name="write-to-us_form">
@@ -186,33 +225,64 @@
                 <a href="#" class="write-to-us_Send">Отправить</a>
             </form>
         </div>   
-    </div>
+    </div> -->
     <div class="footer">
         <div class="footer_wrap">
+            <div class="footer_blockLogo">
+                <a href="#" class="footer_logo"><img src="img/logo.png" alt=""></a>
+            </div>
             <div class="footer_social">
-                <h4 class="footer_social_we">Мы в соц сетях</h4>
                 <ul class="footer_social_buttons">
-                    <li class="footer_social_button"><a href="#" id="social_vk" class="social-default"><img src="img/Footer/social_vk_grey.png" alt="vk"></a></li>
-                    <li class="footer_social_button"><a href="#" id="social_facebook" class="social-default"><img src="img/Footer/social_facebook_grey.png" alt="facebook"></a></li>
-                    <li class="footer_social_button"><a href="#" id="social_twitter" class="social-default"><img src="img/Footer/social_twitter_grey.png" alt="twitter"></a></li><!-- Одноклассники -->
+                    <li class="footer_social_button"><a href="#" id="social_vk" class="social-default"><img src="img/Footer/social_vk_white.png" alt="vk"></a></li>
+                    <li class="footer_social_button"><a href="#" id="social_facebook" class="social-default"><img src="img/Footer/social_facebook_white.png" alt="facebook"></a></li>
+                    <li class="footer_social_button"><a href="#" id="social_twitter" class="social-default"><img src="img/Footer/social_twitter_white.png" alt="twitter"></a></li><!-- Одноклассники -->
                 </ul>    
             </div>
             <div class="footer_contacts">
-                <ul class="contacts_name">
-                    <li>Адрес: </li>
-                    <li>Телефон: </li>
-                    <li>Email: </li>
-                </ul>
-                <ul class="contacts_content">
-                    <li>Lorem ipsum 123</li>
-                    <li>38099456701</li>
-                    <li>Loremipsum123@mail.ru</li>
-                </ul>
+                <div class="contacts">
+                    <div class="contacts_caption">
+                        <img src="img/Footer/icon_phone.png" alt="">
+                        <h3>Телефон:</h3>
+                    </div>
+                    <p>071-123-12-11</p>
+                </div>
+                <div class="contacts">
+                    <div class="contacts_address">
+                        <img src="img/Footer/icon_address.png" alt="">
+                        <h3>Адрес:</h3>
+                    </div>
+                    <p>Улица Челюскинцев, 159, кабинет 101 Донецк, Донецкая область, 83000</p>
+                </div>
+                <div class="contacts">
+                    <div class="conatcts_mail">
+                        <img src="img/Footer/icon_mail.png" alt="">
+                        <h3>Email:</h3>
+                    </div>
+                    <p>websiteinformation@mail.ua</p>
+                </div>
             </div>
         </div>
     </div>
+        <!-- Написать нам -->
+    <div class="modal-overlay" id="modal-overlay"></div> 
+     <div class="modal-block" id="modal-block">
+        <span id="modal-close">&times;</span>
+        <div class="modal-contentPurple">
+            <div class="write-to-us">
+                <h2 class="name-catalog write-to-us_name-catalog">Написать нам</h2>
+                <div class="write-to-us_form_block">
+                    <form action="index.html" method="post" class="write-to-us_form" name="write-to-us_form">
+                        <input type="text" class="write-to-us_inp write-to-us_inp_FS_name" name="FS_name" placeholder="Имя и фамилия">
+                        <input type="text" class="write-to-us_inp write-to-us_inp_email" name="email" placeholder="Email">
+                        <textarea class="write-to-us_inp write-to-us_textMessage" name="textMessage" placeholder="Текст сообщения"></textarea>
+                        <a href="#" class="write-to-us_Send">Отправить</a>
+                    </form>
+                </div>   
+            </div>
+        </div>  
+    </div> 
 <script src="libs/jquery/dist/jquery.min.js"></script>
-<script src="js/bootstrap.js"></script>
+<!-- <script src="js/bootstrap.js"></script> -->
 <script src="js/main.js"></script>
 </body>
 </html>
