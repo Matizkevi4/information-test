@@ -1,6 +1,12 @@
+@import "vars";
 body,html{
     margin: 0;
     padding: 0;
+}
+body {
+    background: $body-bg;
+    overflow: auto;
+    font: $fs_16 $default-font;
 }
 img {
     text-decoration: none;

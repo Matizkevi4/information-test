@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Information</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+    <!-- <link rel="stylesheet" href="libs/bootstrap/bootstrap.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/lessons.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Говорим что используем новейшие браузеры начинает от IE=edge -->
+    <!-- <meta property="og:image" content="path/to/image.jpg"> --> <!-- При копировании ссылки на сайт загружается изображение -->
+    <meta name="description" content=""> <!-- Ключевые строки (для seo поиска) -->
+    <meta name="keywords" content=""> <!-- Ключевые слова (для seo поиска) -->
+</head>
+<body>
+    <div class="purple_header">
+        <div class="container header_wrap">
+            <a href="lessons.html">Уроки</a>
+            <a href="#">Программное обеспечение</a>
+            <a href="index.html" class="link_logo"><img src="img/logo.png" alt="LOGO" class="header_logo"></a>
+            <a href="contacts.html" id="header_contacts">Контакты</a>
+            <a href="#" id="header_writetous">Написать нам</a>
+        </div>
+    </div>
+    <div class="lessons_block">
+        <div class="lessons_block_forstudents">
+            <h2 class="lessons_name-catalog">Для студентов</h2> 
+            <ul class="lessons_items lessons_items_students">
+                <li class="students_tab active_item">I курс</li>
+                <li class="students_tab">II курс</li>
+                <li class="students_tab">III курс</li>
+                <li  class="students_tab">IV курс</li>
+            </ul>
+            <div class="lessons_content_block">
+                <div class="lessons_content_forstudents lessons_content_active">
+                    <ul>
+                        <li><a href="#">Тема 1.</a></li>
+                        <ol>
+                            <li><a href="#">132244234</a></li>
+                            <li><a href="#">132244234</a></li>
+                        </ol>
+                        <li><a href="#">Тема 2.</a></li>
+                        <ol>
+                            <li><a href="#">132244234</a></li>
+                            <li><a href="#">132244234</a></li>
+                        </ol>
+                        <li><a href="#">Тема 3.</a></li>
+                    </ul>
+                </div>
+                <div class="lessons_content_forstudents">
+                    <ul>
+                        <li><a href="#">Тема 4.</a></li>
+                        <ol>
+                            <li><a href="#">111111111</a></li>
+                            <li><a href="#">111111111</a></li>
+                        </ol>
+                        <li><a href="#">Тема 5.</a></li>
+                        <ol>
+                            <li><a href="#">222222222222</a></li>
+                            <li><a href="#">222222222222</a></li>
+                        </ol>
+                        <li><a href="#">Тема 6.</a></li>
+                    </ul>
+                </div>
+                <div class="lessons_content_forstudents">3</div>
+                <div class="lessons_content_forstudents">4</div>
+            </div> 
+        </div>
+        <div class="lessons_block_forschools">
+            <h2 class="lessons_name-catalog">Для учеников</h2>  
+            <ul class="lessons_items  lessons_items_schools">
+                <li class="schools_tab active_item">9 класс</li>
+                <li class="schools_tab">10 класс</li>
+                <li class="schools_tab">11 класс</li>
+            </ul>
+            <div class="lessons_content_block">
+                <div class="lessons_content_forschools  lessons_content_active">1</div>
+                <div class="lessons_content_forschools">2</div>
+                <div class="lessons_content_forschools">3</div>
+            </div>     
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_wrap">
+            <div class="footer_blockLogo">
+                <a href="#" class="footer_logo"><img src="img/logo.png" alt=""></a>
+            </div>
+            <div class="footer_social">
+                <ul class="footer_social_buttons">
+                    <li class="footer_social_button"><a href="#" id="social_vk" class="social-default"><img src="img/social_icon/social_vk_white.png" alt="vk"></a></li>
+                    <li class="footer_social_button"><a href="#" id="social_facebook" class="social-default"><img src="img/social_icon/social_facebook_white.png" alt="facebook"></a></li>
+                    <li class="footer_social_button"><a href="#" id="social_twitter" class="social-default"><img src="img/social_icon/social_twitter_white.png" alt="twitter"></a></li><!-- Одноклассники -->
+                </ul>    
+            </div>
+            <div class="footer_contacts">
+                <div class="contacts">
+                    <div class="contacts_caption">
+                        <img src="img/Footer/icon_phone.png" alt="">
+                        <h3>Телефон:</h3>
+                    </div>
+                    <p>071-123-12-11</p>
+                </div>
+                <div class="contacts">
+                    <div class="contacts_address">
+                        <img src="img/Footer/icon_address.png" alt="">
+                        <h3>Адрес:</h3>
+                    </div>
+                    <p>Улица Челюскинцев, 159, кабинет 101 Донецк, Донецкая область, 83000</p>
+                </div>
+                <div class="contacts">
+                    <div class="conatcts_mail">
+                        <img src="img/Footer/icon_mail.png" alt="">
+                        <h3>Email:</h3>
+                    </div>
+                    <p>websiteinformation@mail.ua</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Написать нам -->
+    <div class="modal-overlay" id="modal-overlay"></div> 
+     <div class="modal-block" id="modal-block">
+        <span id="modal-close">&times;</span>
+        <div class="modal-contentPurple">
+            <div class="write-to-us">
+                <h2 class="name-catalog write-to-us_name-catalog">Написать нам</h2>
+                <div class="write-to-us_form_block">
+                    <form action="index.html" method="post" class="write-to-us_form" name="write-to-us_form">
+                        <input type="text" class="write-to-us_inp write-to-us_inp_FS_name" name="FS_name" placeholder="Имя и фамилия">
+                        <input type="text" class="write-to-us_inp write-to-us_inp_email" name="email" placeholder="Email">
+                        <textarea class="write-to-us_inp write-to-us_textMessage" name="textMessage" placeholder="Текст сообщения"></textarea>
+                        <a href="#" class="write-to-us_Send">Отправить</a>
+                    </form>
+                </div>   
+            </div>
+        </div>  
+    </div> 
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="js/ChangePlaceholder.js"></script> <!-- Изменение placeholder (Написать нам) -->
+    <script src="js/ChangeSocialIcon.js"></script>  <!-- Изменение Соц. кнопок -->
+    <script src="js/WriteToUs.js"></script>  <!-- Блок Написать нам -->
+    <script src="js/lessons.js"></script>
+</body>
+</html>

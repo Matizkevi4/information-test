@@ -3,7 +3,7 @@
 <head>
     <title>Information</title>
     <meta charset="utf-8">
-    <!-- <link rel="shortcut icon" href="img/favicon.png" type="image/png"> -->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
     <!-- <link rel="stylesheet" href="libs/bootstrap/bootstrap.css"> -->
     <link rel="stylesheet" type="text/css" href="css/main.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,9 +33,9 @@
                 </div>
                 <div class="contact_modal-content_mainContacts_wrap-social">
                     <ul class="contact_social_buttons">
-                        <li class="contact_social_button"><a href="#" id="social_vk" class="social-default contact_social-default"><img src="img/Footer/social_vk_grey.png" alt="vk"></a></li>
-                        <li class="contact_social_button"><a href="#" id="social_facebook" class="social-default contact_social-default"><img src="img/Footer/social_facebook_grey.png" alt="facebook"></a></li>
-                        <li class="contact_social_button"><a href="#" id="social_twitter" class="social-default contact_social-default"><img src="img/Footer/social_twitter_grey.png" alt="twitter"></a></li>
+                        <li class="contact_social_button"><a href="#" id="social_vk" class="social-default contact_social-default"><img src="img/social_icon/social_vk_grey.png" alt="vk"></a></li>
+                        <li class="contact_social_button"><a href="#" id="social_facebook" class="social-default contact_social-default"><img src="img/social_icon/social_facebook_grey.png" alt="facebook"></a></li>
+                        <li class="contact_social_button"><a href="#" id="social_twitter" class="social-default contact_social-default"><img src="img/social_icon/social_twitter_grey.png" alt="twitter"></a></li>
                      </ul>   
                 </div>
             </div>
@@ -57,10 +57,10 @@
 
     <div class="header">
         <div class="container header_wrap">
-            <a href="#">Уроки</a>
+            <a href="lessons.html">Уроки</a>
             <a href="#">Программное обеспечение</a>
-            <a href="#" class="link_logo"><img src="img/logo.png" alt="LOGO" class="header_logo"></a>
-            <a href="#" id="header_contacts">Контакты</a>
+            <a href="index.html" class="link_logo"><img src="img/logo.png" alt="LOGO" class="header_logo"></a>
+            <a href="contacts.html" id="header_contacts">Контакты</a>
             <a href="#" id="header_writetous">Написать нам</a>
         </div>
     </div>
@@ -190,15 +190,16 @@
             <div class="material-block_elements">
                 <div class="material-block_elem material-block_books">
                     <div class="material-block_elem_inside">
-                        <a href="#" class="material-block_image material-block_books_image">
+                        <a href="#" id="material-block_books_image" class="material-block_image material-block_books_image">
                             <img src="img/Matherials/icon_books.png" alt="">
+                            <img src="img/Matherials/icon_books_dark.png" class="material-icon" alt="">
                             <span class="material-block_header material-block_books_header">Книги</span>
                         </a>
                     </div>
                 </div>
                 <div class="material-block_elem material-block_video">
                     <div class="material-block_elem_inside">
-                        <a href="#" class="material-block_image material-block_video_image">
+                        <a href="#" id="material-block_video_image" class="material-block_image material-block_video_image">
                             <img src="img/Matherials/icon_video.png" alt="">
                             <span class="material-block_header material-block_video_header">Видео</span>
                         </a>
@@ -206,7 +207,7 @@
                 </div>
                 <div class="material-block_elem material-block_documents">
                     <div class="material-block_elem_inside">
-                        <a href="#" class="material-block_image material-block_documents_image">
+                        <a href="#" id="material-block_documents_image" class="material-block_image material-block_documents_image">
                             <img src="img/Matherials/icon_documents.png" alt="">
                             <span class="material-block_header material-block_documents_header">Документы</span>
                         </a>
@@ -233,9 +234,9 @@
             </div>
             <div class="footer_social">
                 <ul class="footer_social_buttons">
-                    <li class="footer_social_button"><a href="#" id="social_vk" class="social-default"><img src="img/Footer/social_vk_white.png" alt="vk"></a></li>
-                    <li class="footer_social_button"><a href="#" id="social_facebook" class="social-default"><img src="img/Footer/social_facebook_white.png" alt="facebook"></a></li>
-                    <li class="footer_social_button"><a href="#" id="social_twitter" class="social-default"><img src="img/Footer/social_twitter_white.png" alt="twitter"></a></li><!-- Одноклассники -->
+                    <li class="footer_social_button"><a href="#" id="social_vk" class="social-default"><img src="img/social_icon/social_vk_white.png" alt="vk"></a></li>
+                    <li class="footer_social_button"><a href="#" id="social_facebook" class="social-default"><img src="img/social_icon/social_facebook_white.png" alt="facebook"></a></li>
+                    <li class="footer_social_button"><a href="#" id="social_twitter" class="social-default"><img src="img/social_icon/social_twitter_white.png" alt="twitter"></a></li><!-- Одноклассники -->
                 </ul>    
             </div>
             <div class="footer_contacts">
@@ -263,7 +264,7 @@
             </div>
         </div>
     </div>
-        <!-- Написать нам -->
+    <!-- Написать нам -->
     <div class="modal-overlay" id="modal-overlay"></div> 
      <div class="modal-block" id="modal-block">
         <span id="modal-close">&times;</span>
@@ -283,6 +284,9 @@
     </div> 
 <script src="libs/jquery/dist/jquery.min.js"></script>
 <!-- <script src="js/bootstrap.js"></script> -->
+<script src="js/ChangePlaceholder.js"></script> <!-- Изменение placeholder (Написать нам) -->
+<script src="js/ChangeSocialIcon.js"></script>  <!-- Изменение Соц. кнопок -->
+<script src="js/WriteToUs.js"></script>  <!-- Блок Написать нам -->
 <script src="js/main.js"></script>
 </body>
 </html>

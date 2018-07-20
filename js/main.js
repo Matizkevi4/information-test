@@ -90,104 +90,60 @@ $(document).ready(function() {
         Timer2 = setTimeout(autoSlider,SlideTime);
     });
 
+
+
+    //    $('#material-block_books_image').mouseover(function(){
+    //        $($('#material-block_books_image').find('img')[0]).fadeOut(150,function(){
+    //            $($('#material-block_books_image').find('img')[1]).removeClass('material-icon');
+    //            $($('#material-block_books_image').find('img')[1]).addClass('material-icon_active');
+    //            $('#material-block_books_image').addClass('material-block_image-active');
+    //            $('#material-block_books_image').find('span').addClass('material-block_header-active');
+    //        });
+    //    });
+    //    $('#material-block_books_image').mouseout(function(){
+    //       /* var img = $('#material-block_books_image').find('img');
+    //        var lastIndex = img[0].src.lastIndexOf("_");
+    //        $($('#material-block_books_image').find('img')[0]).fadeIn(250,function(){
+    //            $('#material-block_books_image').prepend('<img src='+img[0].src.substring(0, lastIndex)+'.png alt="">');
+    //        });*/
+    //        $($('#material-block_books_image').find('img')[0]).fadeIn(150,function(){
+    //           /* $($('#material-block_books_image').find('img')[1]).removeClass('material-icon_active');
+    //            $($('#material-block_books_image').find('img')[1]).addClass('material-icon');
+    //            $('#material-block_books_image').removeClass('material-block_image-active');
+    //            $('#material-block_books_image').find('span').removeClass('material-block_header-active');*/
+    //        });
+    //    });
+
     $('.material-block_image').each(function(index,elem) { // Изменение цвета иконок материал
         var element = $(elem);
-        
-        element.mouseover(function(){
-            var img = element.find('img')[0].src;
-            var lastIndex = img.lastIndexOf(".");
-            element.find('img')[0].src = img.substring(0, lastIndex)+'_dark.png';
-            element.parent().parent().addClass('material-block_books-active');
-            element.find('span').addClass('material-block_header-active');
+        element.mouseover(function(){ // При наведении
+            var img = element.find('img')[0].src; // Найти элемент 1-й элемент img в DOM 
+            var lastIndex = img.lastIndexOf("."); // Найти в src "."
+            element.find('img')[0].src = img.substring(0, lastIndex)+'_dark.png'
+            //element.append('<img src='+img.substring(0, lastIndex)+'_dark.png'+' alt="">'); // Изменить src, добавить приставку _dark
+            element.addClass('material-block_image-active'); // (НЕОБЯЗАТЕЛЬНО) Добавить класс для изменения рамки вокруг ссылки (реализованно с помощью hover в scss)
+            element.find('span').addClass('material-block_header-active'); // Добавить класс (изменение цвета span(Надписи))
         });
         element.mouseout(function(){
             var img = element.find('img')[0].src;
             var lastIndex = img.lastIndexOf("_");
             element.find('img')[0].src = img.substring(0, lastIndex)+'.png'
-            element.parent().parent().removeClass('material-block_books-active');
+            element.removeClass('material-block_image-active');
             element.find('span').removeClass('material-block_header-active');
         });
     });
 
-    function changePlaceholder(elem,message) { //Элемент с placeholder и сообщение
-        var placeholder = $(elem);
-        $(elem).addClass('write-to-us_input_text');
-        placeholder.focus(function(){
-            placeholder.attr('placeholder','');
-        });
-        placeholder.blur(function(){
-            placeholder.attr('placeholder',message);
-        });
-    }
+    // Placeholder для написать нам
+    // Функция описана в файле ChangePlaceholder.js
     changePlaceholder('.write-to-us_inp_FS_name','Имя и фамилия');
     changePlaceholder('.write-to-us_inp_email','Email');
     changePlaceholder('.write-to-us_textMessage','Текст сообщения');
-    //write-to-us_textMessage 
-    //write-to-us_inp_email
-    //write-to-us_inp_FS_name
 
-    // changeSocialIcon
-    // changeSocialIcon принимает 3 параметра:
-    // 1. id ссылки
-    // 2. путь к исходному изображению
-    // 3. путь к изображению на которое будет заменяться исходное
-    // 4. добавляемый класс (в css должен быть соответствующи оформлен)
-    function changeSocialIcon(elem,old_src,new_src,new_class) {
-        var el = $(elem);
-        $(el).mouseover(function(){
-            el.children()[0].src=new_src;
-            el.addClass(new_class);
-        });
-        $(el).mouseout(function(){
-            el.children()[0].src=old_src;
-            el.removeClass(new_class); 
-        });
-    }
-    changeSocialIcon('#social_vk','img/Footer/social_vk_white.png','img/Footer/social_vk_white.png','social_vk-active');
-    changeSocialIcon('#social_facebook','img/Footer/social_facebook_white.png','img/Footer/social_facebook_white.png','social_facebook-active');
-    changeSocialIcon('#social_twitter','img/Footer/social_twitter_white.png','img/Footer/social_twitter_white.png','social_twitter-active');
+    // changeSocialIcon изменение соц. кнопок при наведении
+    // Функция описана в файле ChangeSocialIcon.js
+    changeSocialIcon('#social_vk', 'img/social_icon/social_vk_white.png', '', 'social_vk-active');
+    changeSocialIcon('#social_facebook', 'img/social_icon/social_facebook_white.png', '', 'social_facebook-active');
+    changeSocialIcon('#social_twitter', 'img/social_icon/social_twitter_white.png', '', 'social_twitter-active');
 
-
-    /*===============Контакты===============*/
-    var out = $("modal-overlay");
-    $('#header_writetous').click(function(e){
-        $('body').css('overflow', 'hidden');
-        $('#modal-overlay').css({display:"block"});
-        $('.modal-contentPurple').css({display:"block"});
-        $('#modal-overlay').animate({
-            opacity:'0.8'
-        },500,function(){
-            $('#modal-block').css({display:"block"});
-            $('#modal-block').animate({
-                top:"50%"/*,
-                left:"50%",
-                transform: "translate(-50%,-50%)"*/
-            },500,function(){});
-        });
-        return false;
-    });
-    function removeContactBlock() { /* Функция для удаления блока контакты*/
-        $('body').css("overflow", "auto");
-        $('#modal-overlay').animate({
-            opacity:"0"
-        },500,function(){
-            $('#modal-overlay').css({
-                display:"none"
-            });
-            $('#modal-block').animate({
-                top:"150%",
-                display:"none"
-            },500,function(){
-                $('.modal-contentPurple').css({display:"none"});
-            });        
-        })
-        
-    }
-    $('#modal-overlay').click(function(){
-        removeContactBlock();
-    }); /* При нажатии вне окна закрывает блок контакты*/
-    $('#modal-close').click(function(){
-        removeContactBlock();
-    }); /* В окне кнопка 'X' которая закрывает контакты*/
 
 });
